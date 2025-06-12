@@ -64,7 +64,7 @@ else
     show_message "[3/7] Installing MetaTrader 5..."
     $wine_executable "/config/.wine/drive_c/mt5setup.exe" "/auto" &
     wait
-    rm -f /config/.wine/drive_c/mt5setup.exe
+    # rm -f /config/.wine/drive_c/mt5setup.exe
 fi
 
 # Recheck if MetaTrader 5 is installed
@@ -113,16 +113,16 @@ if ! is_python_package_installed "pyxdg"; then
     pip install --upgrade --no-cache-dir pyxdg
 fi
 
-# Start the MT5 server on Linux
-show_message "[7/7] Starting the mt5linux server..."
-python3 -m mt5linux --host 0.0.0.0 -p $mt5server_port -w $wine_executable python.exe &
+# # Start the MT5 server on Linux
+# show_message "[7/7] Starting the mt5linux server..."
+# python3 -m mt5linux --host 0.0.0.0 -p $mt5server_port -w $wine_executable python.exe &
 
-# Give the server some time to start
-sleep 5
+# # Give the server some time to start
+# sleep 5
 
-# Check if the server is running
-if ss -tuln | grep ":$mt5server_port" > /dev/null; then
-    show_message "[7/7] The mt5linux server is running on port $mt5server_port."
-else
-    show_message "[7/7] Failed to start the mt5linux server on port $mt5server_port."
-fi
+# # Check if the server is running
+# if ss -tuln | grep ":$mt5server_port" > /dev/null; then
+#     show_message "[7/7] The mt5linux server is running on port $mt5server_port."
+# else
+#     show_message "[7/7] Failed to start the mt5linux server on port $mt5server_port."
+# fi
