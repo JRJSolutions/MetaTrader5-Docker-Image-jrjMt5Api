@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration variables
-mt5file='/config/.wine/drive_c/Program Files/MetaTrader/terminal64.exe'
+mt5file='/config/.wine/drive_c/Program Files (x86)/CMC Markets MetaTrader 4/terminal.exe'
 WINEPREFIX='/config/.wine'
 wine_executable="wine"
 metatrader_version="5.0.36"
@@ -10,7 +10,7 @@ metatrader_version="5.0.36"
 mt5server_port="8001"
 mono_url="https://dl.winehq.org/wine/wine-mono/8.0.0/wine-mono-8.0.0-x86.msi"
 python_url="https://www.python.org/ftp/python/3.9.0/python-3.9.0.exe"
-mt4setup_url="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt4/mt4setup.exe"
+mt4setup_url="https://assets.cmcmarkets.com/files/mt4setup.exe"
 
 # Function to display a graphical message
 show_message() {
