@@ -1,5 +1,23 @@
 #!/bin/bash
 
+
+
+# Source folder
+SRC="/experts_mt4"
+
+# Destination folder
+DEST="/config/.wine/drive_c/users/abc/AppData/Roaming/MetaQuotes/Terminal/B313D8B5E3EEA7D6CF15F515B9125C20/MQL4/Experts"
+
+echo "Copying folder $SRC into $DEST ..."
+
+# Create destination folder if not exists
+mkdir -p "$DEST"
+
+# Copy the entire folder itself into dest (overwrite if already exists)
+cp -rf "$SRC" "$DEST/"
+
+echo "Done."
+
 # Configuration variables
 mt5file='/config/.wine/drive_c/Program Files (x86)/CMC Markets MetaTrader 4/terminal.exe'
 WINEPREFIX='/config/.wine'
