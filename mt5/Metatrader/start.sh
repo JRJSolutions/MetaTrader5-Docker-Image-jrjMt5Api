@@ -7,6 +7,7 @@ wine_executable="wine"
 metatrader_version="5.0.36"
 # metatrader_version="5.0.50"
 # metatrader_version="5.0.5050"
+mt5linuxVersion="0.1.9"
 mt5server_port="8001"
 mono_url="https://dl.winehq.org/wine/wine-mono/8.0.0/wine-mono-8.0.0-x86.msi"
 python_url="https://www.python.org/ftp/python/3.9.0/python-3.9.0.exe"
@@ -99,13 +100,13 @@ fi
 # Install mt5linux library in Windows if not installed
 show_message "[6/7] Checking and installing mt5linux library in Windows if necessary"
 if ! is_wine_python_package_installed "mt5linux"; then
-    $wine_executable python -m pip install --no-cache-dir mt5linux
+    $wine_executable python -m pip install --no-cache-dir mt5linux=$mt5linuxVersion
 fi
 
 # Install mt5linux library in Linux if not installed
 show_message "[6/7] Checking and installing mt5linux library in Linux if necessary"
 if ! is_python_package_installed "mt5linux"; then
-    pip install --upgrade --no-cache-dir mt5linux
+    pip install --upgrade --no-cache-dir mt5linux=$mt5linuxVersion
 fi
 
 # Install pyxdg library in Linux if not installed
